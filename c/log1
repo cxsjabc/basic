@@ -1,0 +1,61 @@
+Using built-in specs.
+Target: i686-apple-darwin11
+Configured with: /private/var/tmp/llvmgcc42/llvmgcc42-2336.11~148/src/configure --disable-checking --enable-werror --prefix=/Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2 --mandir=/share/man --enable-languages=c,objc,c++,obj-c++ --program-prefix=llvm- --program-transform-name=/^[cg][^.-]*$/s/$/-4.2/ --with-slibdir=/usr/lib --build=i686-apple-darwin11 --enable-llvm=/private/var/tmp/llvmgcc42/llvmgcc42-2336.11~148/dst-llvmCore/Developer/usr/local --program-prefix=i686-apple-darwin11- --host=x86_64-apple-darwin11 --target=i686-apple-darwin11 --with-gxx-include-dir=/usr/include/c++/4.2.1
+Thread model: posix
+gcc version 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+ /Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2/libexec/gcc/i686-apple-darwin11/4.2.1/cc1 -quiet -v -imultilib x86_64 -D__DYNAMIC__ hello.c -fPIC -quiet -dumpbase hello.c -mmacosx-version-min=10.9.0 -m64 -mtune=core2 -auxbase hello -version -o /var/folders/pg/9jqg0_2s2bz__3x2npg3bwqc0000gp/T//cc55PEIN.s
+ignoring nonexistent directory "/usr/local/include"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/../../../../i686-apple-darwin11/include"
+ignoring nonexistent directory "/usr/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include
+ /System/Library/Frameworks (framework directory)
+ /Library/Frameworks (framework directory)
+End of search list.
+GNU C version 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00) (i686-apple-darwin11)
+	compiled by GNU C version 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00).
+GGC heuristics: --param ggc-min-expand=150 --param ggc-min-heapsize=131072
+Compiler executable checksum: 72ea1d123312df92a792c3841e21247d
+hello.c:1:19: error: stdio.h: No such file or directory
+hello.c:2:19: error: utime.h: No such file or directory
+hello.c:3:19: error: fcntl.h: No such file or directory
+hello.c:4:22: error: sys/stat.h: No such file or directory
+hello.c:5:23: error: sys/param.h: No such file or directory
+hello.c:6:20: error: unistd.h: No such file or directory
+hello.c:7:23: error: sys/types.h: No such file or directory
+hello.c:8:20: error: setjmp.h: No such file or directory
+hello.c:9:24: error: netinet/in.h: No such file or directory
+hello.c:10:19: error: netdb.h: No such file or directory
+hello.c:11:20: error: stdlib.h: No such file or directory
+hello.c:12:20: error: string.h: No such file or directory
+hello.c:13:23: error: arpa/inet.h: No such file or directory
+hello.c:14:23: error: semaphore.h: No such file or directory
+hello.c: In function ‘add’:
+hello.c:32: warning: incompatible implicit declaration of built-in function ‘printf’
+hello.c: In function ‘doit’:
+hello.c:45: warning: incompatible implicit declaration of built-in function ‘printf’
+hello.c: In function ‘signal_handler_func’:
+hello.c:52: warning: incompatible implicit declaration of built-in function ‘printf’
+hello.c:60: warning: incompatible implicit declaration of built-in function ‘exit’
+hello.c: At top level:
+hello.c:64: error: expected ‘)’ before ‘*’ token
+hello.c: In function ‘main’:
+hello.c:69: error: ‘MAXPATHLEN’ undeclared (first use in this function)
+hello.c:69: error: (Each undeclared identifier is reported only once
+hello.c:69: error: for each function it appears in.)
+hello.c:71: error: ‘pid_t’ undeclared (first use in this function)
+hello.c:71: error: expected ‘;’ before ‘pt’
+hello.c:72: error: ‘jmp_buf’ undeclared (first use in this function)
+hello.c:72: error: expected ‘;’ before ‘buf’
+hello.c:73: error: ‘FILE’ undeclared (first use in this function)
+hello.c:73: error: ‘fp’ undeclared (first use in this function)
+hello.c:75: error: ‘ssize_t’ undeclared (first use in this function)
+hello.c:75: error: expected ‘;’ before ‘ret1’
+hello.c:78: error: storage size of ‘inaddr’ isn’t known
+hello.c:80: error: storage size of ‘addr_in’ isn’t known
+hello.c:81: error: ‘sem_t’ undeclared (first use in this function)
+hello.c:81: error: expected ‘;’ before ‘sem’
+hello.c:94: warning: incompatible implicit declaration of built-in function ‘printf’
+hello.c: At top level:
+hello.c:127: error: expected ‘)’ before ‘*’ token

@@ -1,0 +1,15 @@
+Script started on Sun Nov 24 20:34:51 2013
+[?1034hbash-3.2$   ls
+1               22              hello.txt       lookup_word.sh  xichen
+1.1             2_lnk           hello.zip       mkdirs.sh       xichen.xxxx
+1.bak           3               hello1.c        temp            xxx
+1.sh            a b             hello2.txt      temp1           xxxxxx
+1.upper         hello           iconv_log       test
+112             hello.c         l1              typescript
+172.11.23.34    hello.c.1.gz    log             words
+2               hello.sh        log1            xaa
+bash-3.2$ 
+bash-3.2$ exit
+exit
+
+Script done on Sun Nov 24 20:35:24 2013

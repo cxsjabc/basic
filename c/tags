@@ -1,0 +1,24 @@
+Frameworks	log	/^ \/Applications\/Xcode.app\/Contents\/Developer\/P/
+L	Makefile	/^C_FLAGS := -I$(C_INCLUDES) -L$(C_LINK_FOLDER)$/
+M1	1.c	/^int main()$/
+M2	2.c	/^int main()$/
+M_hello_backup	_hello_backup.c	/^int main()$/
+M_hexdump	_hexdump.c	/^int main()$/
+Mextern	extern.c	/^int main()$/
+Mfirst1	first1.c	/^int main()$/
+Mhello	hello.c	/^int main()$/
+Mhello1	hello1.c	/^int main()$/
+Mmalloc	malloc.c	/^int main()$/
+Msetuid	setuid.c	/^int main()$/
+Mterminal	terminal.c	/^int main()$/
+P_D	1.c	/^#define P_D(n)	printf(#n " %d\\n", (n))$/
+add	add.c	/^int add(int a, int b)$/
+cc_malloc_adjust	malloc.c	/^void	*	cc_malloc_adjust(size_t size)$/
+doit	hello1.c	/^void doit()$/
+dosth	hello1.c	/^void dosth(jmp_buf * buf)$/
+f	assist.c	/^void f()$/
+hexdump	_hexdump.c	/^void hexdump(void * p, size_t size, size_t block_s/
+int_handler	2.c	/^void int_handler(int arg)$/
+interrupt_process	1.c	/^void interrupt_process(int arg)$/
+signal_handler_func	hello1.c	/^void signal_handler_func(int sig_num)$/
+wakeup	1.c	/^void wakeup(int arg)$/

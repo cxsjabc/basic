@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+a=abc123
+
+if [[ "$a" =~ "abc12[1-9]" ]]
+then
+	echo yes!
+fi

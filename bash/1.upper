@@ -1,0 +1,15 @@
+#!/BIN/BASH
+
+
+ECHO "`BASENAME $0` END"
+
+IF [ -N "$1" ]
+THEN
+	ECHO "OK"
+ELSE
+	ECHO "NO"
+FI
+
+
+EXIT
+1
