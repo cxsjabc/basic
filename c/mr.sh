@@ -6,4 +6,4 @@ then
 	exit -1
 fi
 
-gcc -o $1 $1.c && ./$1
+gcc -g -o $1 $1.c && ./$1
