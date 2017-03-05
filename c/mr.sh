@@ -6,4 +6,6 @@ then
 	exit -1
 fi
 
-gcc -g -o $1 $1.c && ./$1
+COMMON_C=../../common/common.c
+
+gcc -g -o $1.elf $1.c ${COMMON_C} && ./$1.elf

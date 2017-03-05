@@ -8,4 +8,4 @@ fi
 
 COMMON_C=../../../common/common.c
 
-gcc -g -o $1 $1.c ${COMMON_C} && ./$1
+gcc -g -o $1.elf $1.c ${COMMON_C} && ./$1.elf
