@@ -14,12 +14,23 @@ int main()
     printf("%-6.2g", .0000009979);
 #endif
 
-#if 1
+#if 0
 	{
 		sscanf("12abc34 56def78", "%d%s%d", &a, s, &b);	// 
 		printf("|%d|%s|%d|\n", a, s, b);		
 	}
 	
+#endif
+
+#if 1
+	{
+		while(1) {
+			int n;
+			int ret;
+			ret = scanf("%d", &n);	// if Ctrl + D, return value: -1.
+			printf("ret:%d\n", ret);
+		}	
+	}
 #endif
 
 	return 0;
