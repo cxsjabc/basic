@@ -22,7 +22,7 @@ int main()
 	printf("%d %x\n", i, i);
 	print_each_byte(pc, sizeof(d));
 #endif
-#if 1
+#if 0
 	{
 		double d;
 		scanf("%lf", &d);
@@ -41,6 +41,19 @@ int main()
 			printf("%f > 0\n", d);
 		if(d > 123456789)
 			printf("%f > \n", d);
+	}
+#endif
+#if 1
+	{
+		float f;
+
+		while(1) {
+			scanf("%f", &f);
+			if(f == 0.f)  // 0.0000000000000000000000000000000000000000000001 == 0
+				printf("flaot: == 0\n");
+			if(f == 0.)   // strange: // 0.0000000000000000000000000000000000000000000001 == 0 
+				printf("double: == 0\n");
+		}
 	}
 #endif
 	return 0;
