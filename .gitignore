@@ -10,8 +10,9 @@ bin/
 *.dSYM/
 
 *.elf
+*.c.simple.elf
 
-/xcuserdata/**/
+**/xcuserdata/**/
 
 !*gitignore
 
