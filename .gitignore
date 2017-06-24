@@ -11,6 +11,8 @@ bin/
 
 *.elf
 
+/xcuserdata/**/
+
 !*gitignore
 
 !*.c
