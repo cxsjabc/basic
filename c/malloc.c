@@ -27,9 +27,17 @@ int main()
 {
 	int ret;
 	void * p;
-
+#if 0
 	p = cc_malloc_adjust(2000 * 1000 * 1000);
     printf("%p\n", p != NULL ? p : 0);
+#endif
+
+#if 1
+	p = NULL;
+	free(p);
+	p = (int *)1;
+	free(p);
+#endif
 	
     return 0;
 }
