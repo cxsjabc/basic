@@ -3,6 +3,8 @@
 
 *.class
 
+*.out
+
 bin/
 
 .hidden
