@@ -15,16 +15,24 @@
 
 int main()
 {
-    int i, j;
-    unsigned int m;
+    int i = 1;
+    int j;
     
-    i = 1;
-    j = 2;
-    
-    printf("%d\n", i > j);
+    j = i << 32;
+    printf("%d\n", j);
     
     return 0;
 }
+
+#if 0
+int i, j;
+unsigned int m;
+
+i = 1;
+j = 2;
+
+printf("%d\n", i > j);
+#endif
 
 #if 0
 char ch;
