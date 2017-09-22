@@ -11,6 +11,8 @@ bin/
 
 *.dSYM/
 
+*.in
+
 *.elf
 *.c.simple.elf
 
