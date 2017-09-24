@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# this file's name is very short, for executing easily
+
+echo $11
+
+exit 0
