@@ -2,6 +2,14 @@
 
 # this file's name is very short, for executing easily
 
-echo $11
+temp_file=xxx.yyy
+
+# trap 'rm -f $temp_file' EXIT
+
+echo hello
+touch xxx.yyy
+
+
+sleep 10
 
 exit 0
