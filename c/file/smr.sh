@@ -6,9 +6,11 @@ then
 	exit -1
 fi
 
-gcc -o $1.c.simple.elf $1.c
+DEST=${1%.*}
+
+gcc -o $1.simple.elf $1
 
 if [ $? -eq 0 ]
 then
-./$1.c.simple.elf
+./$1.simple.elf
 fi
