@@ -9,20 +9,36 @@
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
-
-
 #include <stdio.h>
+#include <dirent.h>
 
 int main()
 {
-    int i = 1;
-    int j;
+    DIR *dp;
+    struct dirent *dirp;
     
-    j = i << 32;
-    printf("%d\n", j);
+    dp = opendir("/");
+    if(dp == NULL) {
+        perror("opendir error:");
+        return -1;
+    }
+    
+    while((dirp = readdir(dp)) != NULL) {
+        printf("%s\n", dirp->d_name);
+    }
+    
+    closedir(dp);
     
     return 0;
 }
+
+#if 0
+int i = 1;
+int j;
+
+j = i << 32;
+printf("%d\n", j);
+#endif
 
 #if 0
 int i, j;
