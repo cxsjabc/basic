@@ -12,12 +12,16 @@ bin/
 *.dSYM/
 
 *.in
+in
+out
 
 *.elf
 *.c.simple.elf
 
 **/xcuserdata/**/
 */project.pbxproj
+
+tags
 
 !*gitignore
 
