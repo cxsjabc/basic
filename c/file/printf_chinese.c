@@ -6,6 +6,10 @@
 
 int main()
 {
-    printf("hello, my cat\n");
+	int n;
+
+	n = printf("中国\n");	// 中: utf8 E4B8AD	// if utf8: n: 7
+	PD(n);
+
     return 0;
 }

@@ -6,6 +6,12 @@
 
 int main()
 {
-    printf("hello, my cat\n");
+	char buf[128];
+	int n;
+
+	n = sprintf(buf, "hello,maomao:%d", 12);
+	PD(n);
+	PS(buf);
+	
     return 0;
 }

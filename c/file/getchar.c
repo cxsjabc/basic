@@ -6,6 +6,11 @@
 
 int main()
 {
-    printf("hello, my cat\n");
+	int c;
+
+	while((c = getchar()) != EOF) {
+		printf("%c ", c);
+	}
+
     return 0;
 }

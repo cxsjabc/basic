@@ -6,6 +6,11 @@
 
 int main()
 {
-    printf("hello, my cat\n");
+	int c;
+
+	c = putchar('x');
+	PC(c);
+	sleep(2);
+
     return 0;
 }

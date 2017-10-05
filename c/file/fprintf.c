@@ -6,6 +6,8 @@
 
 int main()
 {
-    printf("hello, my cat\n");
+	int n;
+    n = fprintf(stdout, "hello cat\n");
+	PD(n);
     return 0;
 }
