@@ -7,12 +7,17 @@
 
 int main()
 {
+	int res;
 	int fd;
-	off_t ofset;
+	ssize_t size;
 
 	fd = open("in", O_RDWR);
 	assert(fd >= 0);
 
+	res = lseek(fd, 100, SEEK_END);
+	PD(res);
+	size = write(fd, "mao", 3);
+	PL(size);	
 
 	close(fd);
     return 0;

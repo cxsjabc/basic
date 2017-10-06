@@ -8,11 +8,8 @@
 int main()
 {
 	int fd;
-	off_t ofset;
-
-	fd = open("in", O_RDWR);
+	fd = creat("in", 0664);	// even file exist, "in" can be generated
 	assert(fd >= 0);
-
 
 	close(fd);
     return 0;

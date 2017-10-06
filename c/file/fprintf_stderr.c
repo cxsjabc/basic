@@ -7,13 +7,7 @@
 
 int main()
 {
-	int fd;
-	off_t ofset;
-
-	fd = open("in", O_RDWR);
-	assert(fd >= 0);
-
-
-	close(fd);
+	fprintf(stdout, "hello");
+	fprintf(stderr, "err_hello");
     return 0;
 }

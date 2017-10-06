@@ -7,13 +7,10 @@
 
 int main()
 {
-	int fd;
-	off_t ofset;
+	int res;
 
-	fd = open("in", O_RDWR);
-	assert(fd >= 0);
+	res = lseek(STDIN_FILENO, 0, SEEK_END);
+	PD(res);
 
-
-	close(fd);
     return 0;
 }

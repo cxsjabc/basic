@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <assert.h>
+#include <errno.h>
 
 #include "common_local.h"
 
 int main()
 {
 	int fd;
-	off_t ofset;
 
-	fd = open("in", O_RDWR);
-	assert(fd >= 0);
-
-
-	close(fd);
+	fd = open("notexist", O_WRONLY);
+	if(fd < 0) {
+		if(errno == ENOENT) {
+			printf("not exist!\n");
+		}
+	}
     return 0;
 }
