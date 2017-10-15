@@ -11,23 +11,26 @@
 int main()
 {
 	pid_t pid;
+	pid_t curr_pid;
 
 	printfp("\n");
+	curr_pid = getpid();
+
 	pid = fork();
 	if(pid < 0)
 		perror("fork error!\n");
 	else if(pid == 0) {
-		printfc("\n");
-		sleep(3);
+		pid_t temp;
+		printfc("wait parent exit!\n");
+		temp = waitpid(curr_pid, NULL, 0);	// no effect: waitpid is just for waiting childrens
+		printfc("parent pid:%d\n", temp);
+		perror("waitpid status:");
 		exit(9);
 	} else {
 		pid_t child;
 		int status;
+		sleep(3);
 		printfp("\n");
-		child = wait(&status);
-		if(WIFEXITED(status)) {
-			printfp("child exit status:%d\n", WEXITSTATUS(status));
-		}	
 	}
 	printf("end\n");
     return 0;

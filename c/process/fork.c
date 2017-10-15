@@ -18,16 +18,9 @@ int main()
 		perror("fork error!\n");
 	else if(pid == 0) {
 		printfc("\n");
-		sleep(3);
-		exit(9);
+		exit(1);
 	} else {
-		pid_t child;
-		int status;
 		printfp("\n");
-		child = wait(&status);
-		if(WIFEXITED(status)) {
-			printfp("child exit status:%d\n", WEXITSTATUS(status));
-		}	
 	}
 	printf("end\n");
     return 0;
