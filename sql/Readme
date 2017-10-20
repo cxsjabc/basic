@@ -1,0 +1,6 @@
+
+
+Compile:
+eg: connect.c
+./mr.sh connect.c -I/usr/local/brew-1.2.3/Cellar/mysql/5.7.19/include/mysql -DNOUSE_XI_LIST -L/usr/local/brew-1.2.3/lib -lmysqlclient
+

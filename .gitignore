@@ -4,6 +4,7 @@
 *.class
 
 *.out
+*.dump
 
 bin/
 
