@@ -11,7 +11,9 @@ REL_PATH=../../
 source common.sh
 #echo "COMMON_C:${COMMON_C}"
 
+EXTRA_ARGS="-I/usr/local/brew-1.2.3/Cellar/mysql/5.7.19/include/mysql -DNOUSE_XI_LIST -L/usr/local/brew-1.2.3/lib -lmysqlclient"
+
 DEST=$1
 shift
 
-gcc $@ -Wall -g -o $DEST.elf $DEST ${COMMON_C} && ./$DEST.elf
+gcc $@ -Wall -g -o $DEST.elf $DEST ${COMMON_C} ${EXTRA_ARGS} && ./$DEST.elf
