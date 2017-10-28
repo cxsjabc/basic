@@ -11,6 +11,9 @@ int main()
 #endif
 #ifdef _POSIX_C_SOURCE
 	#warning "defined _POSIX_C_SOURCE"
+#if _POSIX_C_SOURCE == 200809
+	#warning "is 200809"
+#endif
 #endif
 #ifdef _BSD_SOURCE
 	#warning "defined _BSD_SOURCE"
