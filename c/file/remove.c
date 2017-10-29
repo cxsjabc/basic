@@ -5,16 +5,13 @@
 
 #include "common_local.h"
 
-int main(int argc, char *argv[])
+int main()
 {
 	int fd;
 	off_t ofset;
 	int res;
 
-	if(argc != 2)
-		return -1;
-
-	res = unlink(argv[1]);
+	res = remove("test");
 	PE(res, "");
 
     return 0;

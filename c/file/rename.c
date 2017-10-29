@@ -11,10 +11,10 @@ int main(int argc, char *argv[])
 	off_t ofset;
 	int res;
 
-	if(argc != 2)
+	if(argc != 3)
 		return -1;
 
-	res = unlink(argv[1]);
+	res = rename(argv[1], argv[2]);
 	PE(res, "");
 
     return 0;
