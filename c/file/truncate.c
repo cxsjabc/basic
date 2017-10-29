@@ -13,7 +13,9 @@ int main()
 
 	fd = open("in", O_RDWR);
 	assert(fd >= 0);
-
+	
+	res = truncate("in", 3);
+	PD(res);
 
 	assert(close(fd) == 0);
     return 0;

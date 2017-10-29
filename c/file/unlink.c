@@ -11,10 +11,8 @@ int main()
 	off_t ofset;
 	int res;
 
-	fd = open("in", O_RDWR);
-	assert(fd >= 0);
+	res = unlink("in");
+	PE(res, "");
 
-
-	assert(close(fd) == 0);
     return 0;
 }
