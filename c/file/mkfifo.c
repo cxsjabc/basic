@@ -4,8 +4,12 @@
 
 #include "common_local.h"
 
-int main(int argc, char *argv[])
+int main()
 {
-    printf("hello, my cat\n");
+	int res;
+
+	res = mkfifo("/tmp/my_fifo", 0777);
+	PD(res);
+
     return 0;
 }

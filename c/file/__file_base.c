@@ -5,7 +5,7 @@
 
 #include "common_local.h"
 
-int main()
+int main(int argc, char *argv[])
 {
 	int fd;
 	off_t ofset;

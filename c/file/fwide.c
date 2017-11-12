@@ -7,12 +7,17 @@
 
 int main(int argc, char *argv[])
 {
-	FILE *fp;
+	int fd;
+	off_t ofset;
+	int res;
 
-	fp = fopen("in", "r+");
-	assert(fp);
+	res = fwide(stdin, 0);
+	PD(res);
+	res = fwide(stdout, 0);
+	PD(res);
+	res = fwide(stderr, 0);
+	PD(res);
 
 
-	fclose(fp);
     return 0;
 }
