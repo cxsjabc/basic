@@ -1,0 +1,7 @@
+
+
+# search all file name of __hello_backup.c, which doesn't contain "int argc"
+# , then get the file path and for each this file, replace "int main()" to
+# "int main(int argc, char *argv[])"
+find .. -name __hello_backup.c | xargs grep -v "int argc" | awk -F: '{print $1}' | uniq | xargs -n1 sed -i '' 's/int main()/int main(int argc, char *argv[])/g'
+
