@@ -11,26 +11,30 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <dirent.h>
+#include <sys/socket.h>
+#include <sys/un.h>
 
 int main()
 {
-    DIR *dp;
-    struct dirent *dirp;
-    
-    dp = opendir("/");
-    if(dp == NULL) {
-        perror("opendir error:");
-        return -1;
-    }
-    
-    while((dirp = readdir(dp)) != NULL) {
-        printf("%s\n", dirp->d_name);
-    }
-    
-    closedir(dp);
-    
     return 0;
 }
+
+#if 0
+DIR *dp;
+struct dirent *dirp;
+
+dp = opendir("/");
+if(dp == NULL) {
+    perror("opendir error:");
+    return -1;
+}
+
+while((dirp = readdir(dp)) != NULL) {
+    printf("%s\n", dirp->d_name);
+}
+
+closedir(dp);
+#endif
 
 #if 0
 int i = 1;
