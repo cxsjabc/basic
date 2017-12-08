@@ -8,15 +8,18 @@ int main(int argc, char *argv[])
 {
 	void *p;
 	char *pc;
+	int i = 1;
 
-	p = malloc(128);
-
-	PD(is0(p, 128));	// the memory not need to be zero
-	print_by_byte(p, 128);
-
+	p = alloca(128);
+	assert(p);
+	PP(p);
+	PP(&i);
 
 	pc = p;
-	free(pc);
+	pc[0] = 'x';
+	pc[1] = 'q';
+	pc[2] = '\0';
 
+	PS(p);
     return 0;
 }

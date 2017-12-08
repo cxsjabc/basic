@@ -7,16 +7,11 @@
 int main(int argc, char *argv[])
 {
 	void *p;
-	char *pc;
 
-	p = malloc(128);
+	p = calloc(10, 128);
+	assert(p);	
 
-	PD(is0(p, 128));	// the memory not need to be zero
-	print_by_byte(p, 128);
-
-
-	pc = p;
-	free(pc);
+	PD(is0(p, 1280));
 
     return 0;
 }

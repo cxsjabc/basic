@@ -7,16 +7,17 @@
 int main(int argc, char *argv[])
 {
 	void *p;
-	char *pc;
+	void *p1;
 
-	p = malloc(128);
+	p = realloc(NULL, 124);
+	assert(p);
 
-	PD(is0(p, 128));	// the memory not need to be zero
-	print_by_byte(p, 128);
+	PD(is0(p, 124));
 
-
-	pc = p;
-	free(pc);
-
+	p1 = p;
+	p = realloc(p, 130);
+	assert(p);
+	PD(is0(p, 130));
+	
     return 0;
 }

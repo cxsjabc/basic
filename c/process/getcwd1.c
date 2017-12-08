@@ -6,17 +6,11 @@
 
 int main(int argc, char *argv[])
 {
-	void *p;
-	char *pc;
+	char *cwd;
 
-	p = malloc(128);
+	cwd = getcwd(NULL, 0);
+	PS(cwd);
 
-	PD(is0(p, 128));	// the memory not need to be zero
-	print_by_byte(p, 128);
-
-
-	pc = p;
-	free(pc);
-
+	free(cwd);
     return 0;
 }

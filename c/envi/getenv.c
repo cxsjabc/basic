@@ -6,17 +6,14 @@
 
 int main(int argc, char *argv[])
 {
-	void *p;
-	char *pc;
+	char *p;
 
-	p = malloc(128);
+	p = getenv("USER");
+	PS(p);
 
-	PD(is0(p, 128));	// the memory not need to be zero
-	print_by_byte(p, 128);
-
-
-	pc = p;
-	free(pc);
+	p[1] = 'q';
+	p = getenv("USER");	
+	PS(p);
 
     return 0;
 }
