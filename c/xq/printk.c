@@ -19,7 +19,7 @@
 
 int main(int argc, char *argv[])
 {
-    printk("xq is clever when she is clever!\n");
+    printk("xm is clever when she is clever!\n");
 
 	pr_debug("it's outputted!\n");
     return 0;

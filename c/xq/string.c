@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
 	name[1] = 'i';
 	name[2] = 'a';
 	name[3] = 'o';
-	name[4] = 'q';
-	name[5] = 'i';
-	name[6] = 'n';
+	name[4] = 'm';
+	name[5] = 'a';
+	name[6] = 'o';
 	name[7] = 'g';
 	
 	name[8] = '\0';
