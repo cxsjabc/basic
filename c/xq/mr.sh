@@ -14,4 +14,6 @@ source common.sh
 DEST=$1
 shift
 
+# i386
 gcc $@ -arch i386 -Wall -g -o $DEST.elf $DEST ${COMMON_C} && ./$DEST.elf
+# gcc $@ -Wall -g -o $DEST.elf $DEST ${COMMON_C} && ./$DEST.elf
