@@ -6,6 +6,12 @@ then
 	exit -1
 fi
 
-COMMON_C=../../../common/common.c
+REL_PATH=../../../
+#COMMON_C="../../common/common.c ../../common/gen.c ../../common/arr.c"
+source common.sh
+#echo "COMMON_C:${COMMON_C}"
 
-gcc -g -o $1.elf $1.c ${COMMON_C} && ./$1.elf
+DEST=$1
+shift
+
+gcc $@ -Wall -g -o $DEST.elf $DEST ${COMMON_C} && ./$DEST.elf
