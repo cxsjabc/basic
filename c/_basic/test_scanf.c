@@ -6,6 +6,11 @@ int main()
 	char c;
 	char s[32];
 
+#if 1
+	scanf("%d", &a);	// input: 2147483648, will print: -2147483648 (overflow)
+	printf("%d\n", a);
+#endif
+
 #if 0
 	// scanf("  %i,%c", &a, &c);
 	// printf("|%d| |%c|\n", a, c);
@@ -22,7 +27,7 @@ int main()
 	
 #endif
 
-#if 1
+#if 0
 	{
 		while(1) {
 			int n;
