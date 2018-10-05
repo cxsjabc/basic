@@ -1,0 +1,5 @@
+compile:
+	csc _hello.cs
+
+execute:
+	mono _hello.exe
