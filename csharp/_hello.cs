@@ -10,9 +10,6 @@ namespace hello
 
             max = "hello, cat";
             Console.WriteLine(max);
-
-            max = System.Console.ReadLine();
-            Console.WriteLine(max);
         }
     }
 }
