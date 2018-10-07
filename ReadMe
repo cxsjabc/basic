@@ -2,3 +2,5 @@
 
 git push origin HEAD:dev
 git push origin dev:dev
+
+ssh-add ~/.ssh/id_rsa
