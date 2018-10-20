@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C77FAB8F217AD58F00BF14E4 /* assist.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FAB8D217AD56900BF14E4 /* assist.m */; };
+		C77FAB92217B1B2700BF14E4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FAB91217B1B2700BF14E4 /* Person.m */; };
+		C77FAB95217B1B7B00BF14E4 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FAB94217B1B7B00BF14E4 /* Student.m */; };
 		C7CE345E217328BE00960AF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CE345D217328BE00960AF5 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C77FAB8D217AD56900BF14E4 /* assist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = assist.m; sourceTree = "<group>"; };
+		C77FAB90217B1B2700BF14E4 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		C77FAB91217B1B2700BF14E4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		C77FAB93217B1B7B00BF14E4 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		C77FAB94217B1B7B00BF14E4 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		C7CE345A217328BE00960AF5 /* hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hello; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CE345D217328BE00960AF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +66,11 @@
 			isa = PBXGroup;
 			children = (
 				C7CE345D217328BE00960AF5 /* main.m */,
+				C77FAB90217B1B2700BF14E4 /* Person.h */,
+				C77FAB93217B1B7B00BF14E4 /* Student.h */,
+				C77FAB94217B1B7B00BF14E4 /* Student.m */,
+				C77FAB91217B1B2700BF14E4 /* Person.m */,
+				C77FAB8D217AD56900BF14E4 /* assist.m */,
 			);
 			path = hello;
 			sourceTree = "<group>";
@@ -119,7 +132,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77FAB92217B1B2700BF14E4 /* Person.m in Sources */,
+				C77FAB8F217AD58F00BF14E4 /* assist.m in Sources */,
 				C7CE345E217328BE00960AF5 /* main.m in Sources */,
+				C77FAB95217B1B7B00BF14E4 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +234,8 @@
 		C7CE3462217328BE00960AF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -225,6 +243,8 @@
 		C7CE3463217328BE00960AF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -248,6 +268,7 @@
 				C7CE3463217328BE00960AF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
