@@ -1,4 +1,4 @@
-//
+﻿//
 //  main.m
 //  hello 
 //
@@ -12,9 +12,11 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Student *s;
+        NSString *s;
         
-        s = [Student new];
+        s = @"abc猫猫";
+        
+        NSLog(@"%u", [s length]);
     }
     return 0;
 }

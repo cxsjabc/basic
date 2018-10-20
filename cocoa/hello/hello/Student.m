@@ -10,14 +10,17 @@
 
 @implementation Student
 
+#pragma mark Student_Start
 // by default: init won't call super init func
 - (id)init
 {
     NSLog(@"Student class: init is called!");
-    //if(self = [super init]) {
-        
-    //}
+    if(self = [super init]) {
+    
+    }
     return self;
 }
+
+#pragma mark -
 
 @end
