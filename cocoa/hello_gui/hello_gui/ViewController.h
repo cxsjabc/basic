@@ -9,7 +9,13 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ViewController : NSViewController
+{
+    IBOutlet id text1;
+    IBOutlet id text2;
+    IBOutlet id button1;
+}
 
+- (IBAction)convert:(id)sender;
 
 @end
 

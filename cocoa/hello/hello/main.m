@@ -12,11 +12,11 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSString *s;
+        NSMutableString *s= [[NSMutableString alloc] init];
         
-        s = @"abc猫猫";
+        [s appendString:@"abc猫猫"];
         
-        NSLog(@"%u", [s length]);
+        NSLog(@"%lu", (unsigned long)[s length]);
     }
     return 0;
 }

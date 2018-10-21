@@ -23,5 +23,10 @@
     // Update the view, if already loaded.
 }
 
+- (IBAction)convert:(id)sender
+{
+    float f1 = [text1 floatValue];
+    [text2 setFloatValue:(f1 + 1)];
+}
 
 @end
