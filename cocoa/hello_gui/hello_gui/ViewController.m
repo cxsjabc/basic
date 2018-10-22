@@ -29,4 +29,10 @@
     [text2 setFloatValue:(f1 + 1)];
 }
 
+- (void)awakeFromNib
+{
+    NSDate * date = [NSDate date];
+    [text2 setObjectValue:date];
+}
+
 @end
