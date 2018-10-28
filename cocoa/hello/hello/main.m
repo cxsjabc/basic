@@ -10,13 +10,28 @@
 
 #import "Student.h"
 
+void test(char ch)
+{
+    int i = ch;
+    
+    
+    printf("%d\n", i);
+    
+    for(i = 0; i < 100; ++i)
+        printf("%d", i);
+    printf("\n");
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSMutableString *s= [[NSMutableString alloc] init];
+        NSArray *arr = [[NSArray alloc] init];
         
-        [s appendString:@"abc猫猫"];
+        [arr objectAtIndex:0];
         
         NSLog(@"%lu", (unsigned long)[s length]);
+        
+        test('a');
     }
     return 0;
 }

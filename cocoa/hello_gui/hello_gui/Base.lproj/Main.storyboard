@@ -718,7 +718,7 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="button1" destination="Sau-l9-7Da" id="sSu-vG-hy5"/>
+                        <outlet property="button1" destination="Sau-l9-7Da" id="HvF-Dc-lFV"/>
                         <outlet property="text1" destination="eQh-UR-KeH" id="TUc-bS-kX5"/>
                         <outlet property="text2" destination="87p-eB-Ukd" id="ZnT-wx-xwR"/>
                     </connections>
