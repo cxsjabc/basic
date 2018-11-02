@@ -27,11 +27,11 @@ int main(int argc, const char * argv[]) {
         NSMutableString *s= [[NSMutableString alloc] init];
         NSArray *arr = [[NSArray alloc] init];
         
-        [arr objectAtIndex:0];
+        //[arr objectAtIndex:0];
         
         NSLog(@"%lu", (unsigned long)[s length]);
         
-        test('a');
+        //test('a');
     }
-    return 0;
+    //return 0;
 }
