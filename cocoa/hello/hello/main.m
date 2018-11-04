@@ -24,6 +24,7 @@ void test(char ch)
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+#if 0
         NSMutableString *s= [[NSMutableString alloc] init];
         NSArray *arr = [[NSArray alloc] init];
         
@@ -32,6 +33,23 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%lu", (unsigned long)[s length]);
         
         //test('a');
+#endif
+        
+#if 1
+        Person *p = [Person new];
+    #if 1
+            [p testException];
+    #else
+            @try {
+                [p testException];
+            } @catch(NSException *e) {
+                NSLog(@"an exception is catched!");
+            } @finally {
+                [p release];
+            }
+    #endif
+        
+#endif
     }
     //return 0;
 }

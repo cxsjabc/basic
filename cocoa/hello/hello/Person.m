@@ -13,7 +13,7 @@
 - (id)init
 {
     if(self = [super init]) {
-        NSLog(@"Person class: init is called!");
+        NSLog(@"Person class: init is called! retaincount:%lu", [self retainCount]);
     }
     return self;
 }
@@ -26,6 +26,11 @@
 - (void)setAge:(int)new_age
 {
     age = new_age;
+}
+
+- (void)testException
+{
+    @throw [NSException exceptionWithName:@"person_exception" reason:@"no reason, just throw it" userInfo:nil];
 }
 
 @end

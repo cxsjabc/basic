@@ -17,4 +17,6 @@
 - (int)age;
 - (void)setAge:(int)new_age;
 
+- (void)testException;
+
 @end
