@@ -25,6 +25,10 @@ void test(char ch)
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 #if 0
+        8;
+#endif
+        
+#if 0
         NSMutableString *s= [[NSMutableString alloc] init];
         NSArray *arr = [[NSArray alloc] init];
         
@@ -35,7 +39,7 @@ int main(int argc, const char * argv[]) {
         //test('a');
 #endif
         
-#if 1
+#if 0
         Person *p = [Person new];
     #if 1
             [p testException];
