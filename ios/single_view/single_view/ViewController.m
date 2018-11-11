@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    idv = [[UIImageDragView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+    [idv setBackgroundColor:[UIColor redColor]];
+    [idv setUserInteractionEnabled:TRUE];
+    [self.view addSubview:idv];
 }
 
 

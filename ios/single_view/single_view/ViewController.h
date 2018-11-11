@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageDragView.h"
 
 @interface ViewController : UIViewController
 {
-    IBOutlet UITextView *tv;
+    IBOutlet UITextView     *tv;
+    UIImageDragView         *idv;
 }
 
-- (IBAction)click:(id)sender;
+//- (IBAction)click:(id)sender;
 
 @end
 

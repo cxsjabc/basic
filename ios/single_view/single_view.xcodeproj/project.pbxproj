@@ -14,6 +14,7 @@
 		C7CD3D862198026600A2E3A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CD3D852198026600A2E3A0 /* Assets.xcassets */; };
 		C7CD3D892198026600A2E3A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7CD3D872198026600A2E3A0 /* LaunchScreen.storyboard */; };
 		C7CD3D912198085D00A2E3A0 /* myxib.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CD3D902198085D00A2E3A0 /* myxib.xib */; };
+		C7CD3D942198164100A2E3A0 /* UIImageDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD3D932198164100A2E3A0 /* UIImageDragView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		C7CD3D882198026600A2E3A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7CD3D8A2198026600A2E3A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7CD3D902198085D00A2E3A0 /* myxib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myxib.xib; sourceTree = "<group>"; };
+		C7CD3D922198164100A2E3A0 /* UIImageDragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageDragView.h; sourceTree = "<group>"; };
+		C7CD3D932198164100A2E3A0 /* UIImageDragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageDragView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +73,9 @@
 				C7CD3D872198026600A2E3A0 /* LaunchScreen.storyboard */,
 				C7CD3D8A2198026600A2E3A0 /* Info.plist */,
 				C7CD3D792198026600A2E3A0 /* Supporting Files */,
+				C7CD3D922198164100A2E3A0 /* UIImageDragView.h */,
+				C7CD3D932198164100A2E3A0 /* UIImageDragView.m */,
 			);
-			name = single_view;
 			path = single_view;
 			sourceTree = "<group>";
 		};
@@ -157,6 +161,7 @@
 			files = (
 				C7CD3D812198026600A2E3A0 /* ViewController.m in Sources */,
 				C7CD3D7E2198026600A2E3A0 /* AppDelegate.m in Sources */,
+				C7CD3D942198164100A2E3A0 /* UIImageDragView.m in Sources */,
 				C7CD3D7B2198026600A2E3A0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +321,7 @@
 				C7CD3D8F2198026600A2E3A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
