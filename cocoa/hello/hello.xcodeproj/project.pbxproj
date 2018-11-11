@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7319150219859BA00090214 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = C731914F219859BA00090214 /* Test.m */; };
 		C77FAB8F217AD58F00BF14E4 /* assist.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FAB8D217AD56900BF14E4 /* assist.m */; };
 		C77FAB92217B1B2700BF14E4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FAB91217B1B2700BF14E4 /* Person.m */; };
 		C77FAB95217B1B7B00BF14E4 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FAB94217B1B7B00BF14E4 /* Student.m */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C731914E219859BA00090214 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		C731914F219859BA00090214 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		C77FAB8D217AD56900BF14E4 /* assist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = assist.m; sourceTree = "<group>"; };
 		C77FAB90217B1B2700BF14E4 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		C77FAB91217B1B2700BF14E4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 				C77FAB94217B1B7B00BF14E4 /* Student.m */,
 				C77FAB91217B1B2700BF14E4 /* Person.m */,
 				C77FAB8D217AD56900BF14E4 /* assist.m */,
+				C731914E219859BA00090214 /* Test.h */,
+				C731914F219859BA00090214 /* Test.m */,
 			);
 			path = hello;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7319150219859BA00090214 /* Test.m in Sources */,
 				C77FAB92217B1B2700BF14E4 /* Person.m in Sources */,
 				C77FAB8F217AD58F00BF14E4 /* assist.m in Sources */,
 				C7CE345E217328BE00960AF5 /* main.m in Sources */,
