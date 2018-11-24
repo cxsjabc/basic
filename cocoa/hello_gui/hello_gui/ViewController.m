@@ -33,6 +33,28 @@
 {
     NSDate * date = [NSDate date];
     [text2 setObjectValue:date];
+    
+    _voices = [NSSpeechSynthesizer availableVoices];
+    speech = [[NSSpeechSynthesizer alloc] initWithVoice:nil];
+    [speech setDelegate:self];
+}
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return [_voices count];
+}
+
+- (nullable id)tableView:(NSTableView *)tableView objectValueForTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    return [_voices objectAtIndex:row];
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
+{
+    NSInteger row = [tv selectedRow];
+    NSString *voice = [_voices objectAtIndex:row];
+    
+    [speech setVoice:voice];
 }
 
 @end

@@ -9,11 +9,16 @@
 #import <Cocoa/Cocoa.h>
 #import <AppKit/AppKit.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController< NSTableViewDelegate, NSTableViewDataSource>
 {
     IBOutlet id text1;
     IBOutlet id text2;
     IBOutlet id button1;
+    
+    IBOutlet NSTableView *tv;
+    
+    NSArray *_voices;
+    NSSpeechSynthesizer *speech;
 }
 
 - (IBAction)convert:(id)sender;
