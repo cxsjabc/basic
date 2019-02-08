@@ -6,11 +6,13 @@ then
 	exit -1
 fi
 
-DEST=${1%.*}
+DEST=$1
 
-gcc -o $1.simple.elf $1
+shift
+
+gcc $@ -o $DEST.simple.elf $DEST
 
 if [ $? -eq 0 ]
 then
-./$1.simple.elf
+./$DEST.simple.elf
 fi
