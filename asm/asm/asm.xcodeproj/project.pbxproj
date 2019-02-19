@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C7EB310317A37BFB0035625E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C7EB310217A37BFB0035625E /* main.c */; };
 		C7EB310517A37BFB0035625E /* asm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7EB310417A37BFB0035625E /* asm.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C7EB30FD17A37BFB0035625E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
@@ -25,11 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C7337B55221C45C20036705F /* first_nasm.nasm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.nasm; path = first_nasm.nasm; sourceTree = "<group>"; };
+		C7337B56221C45C20036705F /* first.nasm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.nasm; path = first.nasm; sourceTree = "<group>"; };
 		C7EB30FF17A37BFB0035625E /* asm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = asm; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EB310217A37BFB0035625E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C7EB310417A37BFB0035625E /* asm.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = asm.1; sourceTree = "<group>"; };
-		C7EB310B17A37C0B0035625E /* first.asm */ = {isa = PBXFileReference; explicitFileType = sourcecode.asm; fileEncoding = 4; path = first.asm; sourceTree = "<group>"; };
-		C7EB310D17A381400035625E /* first_nasm.asm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm.asm; path = first_nasm.asm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +61,10 @@
 		C7EB310117A37BFB0035625E /* asm */ = {
 			isa = PBXGroup;
 			children = (
-				C7EB310D17A381400035625E /* first_nasm.asm */,
+				C7337B55221C45C20036705F /* first_nasm.nasm */,
+				C7337B56221C45C20036705F /* first.nasm */,
 				C7EB310217A37BFB0035625E /* main.c */,
 				C7EB310417A37BFB0035625E /* asm.1 */,
-				C7EB310B17A37C0B0035625E /* first.asm */,
 			);
 			path = asm;
 			sourceTree = "<group>";
@@ -80,6 +79,7 @@
 				C7EB30FB17A37BFB0035625E /* Sources */,
 				C7EB30FC17A37BFB0035625E /* Frameworks */,
 				C7EB30FD17A37BFB0035625E /* CopyFiles */,
+				C7337B59221C47330036705F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -116,12 +116,27 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C7337B59221C47330036705F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "nasm -f macho ${SRCROOT}/asm/first_nasm.nasm\nld -e _start -lSystem -o ${SRCROOT}/asm/first_nasm ${SRCROOT}/asm/first_nasm.o";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C7EB30FB17A37BFB0035625E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7EB310317A37BFB0035625E /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +234,7 @@
 				C7EB310A17A37BFB0035625E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
