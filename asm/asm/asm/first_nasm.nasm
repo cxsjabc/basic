@@ -3,13 +3,13 @@
 ; ld -e _start -o hello hello.o
 ;
 section     .text
- global _start                       ;must be declared for linker (ld)
+ global _main                       ;must be declared for linker (ld)
  
 _syscall:           
      int     0x80            ;system call
      ret
  
-_start:                         ;tell linker entry point
+_main:                         ;tell linker entry point
  
      push    dword len       ;message length
      push    dword msg       ;message to write
@@ -31,5 +31,5 @@ _start:                         ;tell linker entry point
                              ;there's no need to clean stack
 section .data
  
-msg     db      "Hello, world!",0xa     ;our dear string
+msg     db      "Hello, cat!",0xa     ;our dear string
 len     equ     $ - msg                 ;length of our dear string

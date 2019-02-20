@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7337B5B221C4F950036705F /* first_nasm.nasm in Sources */ = {isa = PBXBuildFile; fileRef = C7337B55221C45C20036705F /* first_nasm.nasm */; };
 		C7EB310517A37BFB0035625E /* asm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7EB310417A37BFB0035625E /* asm.1 */; };
 /* End PBXBuildFile section */
 
@@ -128,7 +129,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "nasm -f macho ${SRCROOT}/asm/first_nasm.nasm\nld -e _start -lSystem -o ${SRCROOT}/asm/first_nasm ${SRCROOT}/asm/first_nasm.o";
+			shellScript = "nasm -g -f macho ${SRCROOT}/asm/first_nasm.nasm\nld -e _main -lSystem -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/first_nasm.o";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -137,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7337B5B221C4F950036705F /* first_nasm.nasm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +206,7 @@
 		C7EB310917A37BFB0035625E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -211,6 +214,7 @@
 		C7EB310A17A37BFB0035625E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
