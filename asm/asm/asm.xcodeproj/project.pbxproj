@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C7337B5F222121130036705F /* test.S in Sources */ = {isa = PBXBuildFile; fileRef = C7337B5E222121130036705F /* test.S */; };
+		C7337B652221301C0036705F /* test.S in Sources */ = {isa = PBXBuildFile; fileRef = C7337B5E222121130036705F /* test.S */; };
 		C7EB310517A37BFB0035625E /* asm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7EB310417A37BFB0035625E /* asm.1 */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		C7337B55221C45C20036705F /* first_nasm.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = first_nasm.S; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.asm.i386; };
 		C7337B56221C45C20036705F /* first.nasm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.nasm; path = first.nasm; sourceTree = "<group>"; };
 		C7337B5E222121130036705F /* test.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = test.S; sourceTree = "<group>"; };
-		C7337B60222127600036705F /* test.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = test.inc; sourceTree = "<group>"; };
+		C7337B60222127600036705F /* test.inc */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = test.inc; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.asm.i386; };
 		C7EB30FF17A37BFB0035625E /* asm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = asm; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EB310217A37BFB0035625E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C7EB310417A37BFB0035625E /* asm.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = asm.1; sourceTree = "<group>"; };
@@ -81,10 +81,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7EB310817A37BFB0035625E /* Build configuration list for PBXNativeTarget "asm" */;
 			buildPhases = (
+				C7337B6322212EEA0036705F /* ShellScript */,
+				C7337B59221C47330036705F /* ShellScript */,
 				C7EB30FB17A37BFB0035625E /* Sources */,
 				C7EB30FC17A37BFB0035625E /* Frameworks */,
 				C7EB30FD17A37BFB0035625E /* CopyFiles */,
-				C7337B59221C47330036705F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -135,6 +136,19 @@
 			shellPath = /bin/sh;
 			shellScript = "nasm -g -f macho ${SRCROOT}/asm/first_nasm.nasm\nld -e _main -lSystem -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/first_nasm.o";
 		};
+		C7337B6322212EEA0036705F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf ${OBJECT_FILE_DIR_normal}/${ARCHS}/*.o\n#rm -rf ${CONFIGURATION_BUILD_DIR}";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -142,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7337B5F222121130036705F /* test.S in Sources */,
+				C7337B652221301C0036705F /* test.S in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

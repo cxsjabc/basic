@@ -16,7 +16,7 @@ _syscall:
 _main:                         ;tell linker entry point
 
 ; call test file func
-    call test_offset
+    call test_entry
      push    dword len       ;message length
      push    dword msg       ;message to write
      push    dword 1         ;file descriptor (stdout)
