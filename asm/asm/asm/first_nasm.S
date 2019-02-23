@@ -31,5 +31,5 @@ _main:                         ;tell linker entry point
                              ;there's no need to clean stack
 section .data
  
-msg     db      "Hello, cat!",0xa     ;our dear string
+msg     db      "Hello, catty!",0xa     ;our dear string
 len     equ     $ - msg                 ;length of our dear string

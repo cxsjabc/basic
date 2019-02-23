@@ -22,6 +22,10 @@ int main(int argc, const char * argv[])
     // insert code here...
     printf("Hello, World!\n");
     
+    // add assembly codes
+    __asm volatile ("movl $1, %eax");
+    __asm volatile ("movl $1, %ebx");
+    __asm volatile ("addl %ebx, %eax");
     ret = add(1, 2);
     
     return 0;
