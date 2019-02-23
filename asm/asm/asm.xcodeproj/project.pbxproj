@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C7337B5D22211DF80036705F /* first_nasm.S in Sources */ = {isa = PBXBuildFile; fileRef = C7337B55221C45C20036705F /* first_nasm.S */; };
+		C7337B5F222121130036705F /* test.S in Sources */ = {isa = PBXBuildFile; fileRef = C7337B5E222121130036705F /* test.S */; };
 		C7EB310517A37BFB0035625E /* asm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7EB310417A37BFB0035625E /* asm.1 */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +27,8 @@
 /* Begin PBXFileReference section */
 		C7337B55221C45C20036705F /* first_nasm.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = first_nasm.S; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.asm.i386; };
 		C7337B56221C45C20036705F /* first.nasm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.nasm; path = first.nasm; sourceTree = "<group>"; };
+		C7337B5E222121130036705F /* test.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = test.S; sourceTree = "<group>"; };
+		C7337B60222127600036705F /* test.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = test.inc; sourceTree = "<group>"; };
 		C7EB30FF17A37BFB0035625E /* asm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = asm; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EB310217A37BFB0035625E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C7EB310417A37BFB0035625E /* asm.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = asm.1; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		C7EB310117A37BFB0035625E /* asm */ = {
 			isa = PBXGroup;
 			children = (
+				C7337B60222127600036705F /* test.inc */,
+				C7337B5E222121130036705F /* test.S */,
 				C7337B55221C45C20036705F /* first_nasm.S */,
 				C7337B56221C45C20036705F /* first.nasm */,
 				C7EB310217A37BFB0035625E /* main.c */,
@@ -138,7 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7337B5D22211DF80036705F /* first_nasm.S in Sources */,
+				C7337B5F222121130036705F /* test.S in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,15 +2,21 @@
 ; nasm -f macho hello.asm
 ; ld -e _start -o hello hello.o
 ;
+
+; the real test file
+%include "/Users/xichen/codes/basic/asm/asm/asm/test.inc"
+
 section     .text
  global _main                       ;must be declared for linker (ld)
  
 _syscall:           
      int     0x80            ;system call
      ret
- 
+
 _main:                         ;tell linker entry point
- 
+
+; call test file func
+    call test_offset
      push    dword len       ;message length
      push    dword msg       ;message to write
      push    dword 1         ;file descriptor (stdout)
