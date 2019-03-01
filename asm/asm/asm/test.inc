@@ -81,10 +81,10 @@ test1:
     mov eax, 1
     mov ebx, 2
     add eax, ebx
-    ret
+    retf
 
 test_entry:
-    ;call test1
+    call test1
     ;call test2
     ;call test3
     ;call test4
