@@ -18,7 +18,7 @@
 //#define USE_ASM_INLINED
 
 #ifdef USE_EXT_ASM
-#elif !defined(USE_ASM_INLINED)
+#elif !defined(USE_ASM_INLINED) && !defined(USE_ASM_INLINED_OPTIMIZED)
 int cal_2_n(int n){
 	int ret = 1;
 	while(n-- > 0)
@@ -65,7 +65,24 @@ int main(int argc, const char * argv[])
     __asm volatile ("movl %%eax, %0":"=m"(ret)::"memory");
     __asm volatile ("popl %eax");   // must add this line  because cal_2_n use eax
     TIME_END
-#else           // 0.3s
+#elif defined USE_ASM_INLINED_OPTIMIZED   // 0.36s
+    printf("USE_ASM_INLINED_OPTIMIZED:n:%d, loop_cnt:%d\n", n, loop_cnt);
+    TIME_START(loop_cnt)
+    __asm volatile ("pushl %eax");  // must add this line because cal_2_n use eax
+    __asm volatile ("movl $5, %ecx");
+    __asm volatile ("_cal_2_n:\n"
+                    "movl $1, %eax\n"
+                    "cmpl $0, %ecx\n"
+                    "jz cal_2_n_out\n"
+                    "mul_internal:\n"
+                    "addl %eax, %eax\n"
+                    "decl %ecx\n"
+                    "jnz mul_internal\n"
+                    "cal_2_n_out:");
+    __asm volatile ("movl %%eax, %0":"=m"(ret)::"memory");
+    __asm volatile ("popl %eax");   // must add this line  because cal_2_n use eax
+    TIME_END
+#else           // 0.32s
      printf("C source:n:%d, loop_cnt:%d\n", n, loop_cnt);
 	TIME_START(loop_cnt)
 		ret = cal_2_n(n);
