@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C7337B652221301C0036705F /* test.S in Sources */ = {isa = PBXBuildFile; fileRef = C7337B5E222121130036705F /* test.S */; };
+		C7337B69222A0AF30036705F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C7EB310217A37BFB0035625E /* main.c */; };
 		C7EB310517A37BFB0035625E /* asm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7EB310417A37BFB0035625E /* asm.1 */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7337B69222A0AF30036705F /* main.c in Sources */,
 				C7337B652221301C0036705F /* test.S in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

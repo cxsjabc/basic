@@ -16,17 +16,26 @@ int add(int a, int b){
     return a + b;
 }
 
-int main_backup(int argc, const char * argv[])
+int main(int argc, const char * argv[])
 {
     int ret;
-    // insert code here...
-    printf("Hello, World!\n");
+    
+    // printf("Hello, World!\n");
     
     // add assembly codes
+#if 0
     __asm volatile ("movl $1, %eax");
     __asm volatile ("movl $1, %ebx");
     __asm volatile ("addl %ebx, %eax");
-    ret = add(1, 2);
+#endif
+    
+    __asm volatile ("pushl %eax");  // must add this line because cal_2_n use eax
+    __asm volatile ("movl $5, %ecx");
+    __asm volatile ("call cal_2_n");
+    __asm volatile ("movl %%eax, %0":"=m"(ret)::"memory");
+    __asm volatile ("popl %eax");   // must add this line  because cal_2_n use eax
+    
+    printf("ret: %d\n", ret);
     
     return 0;
 }

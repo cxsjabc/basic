@@ -29,6 +29,24 @@ print_no_ret:
     ; now go home and exit
     jmp test_entry_ret
 
+; ecx: n; return value: eax
+global cal_2_n
+cal_2_n:
+    mov eax, 1
+    cmp ecx, 0
+    jz cal_2_n_out
+mul_internal:
+    add eax, eax
+    loop mul_internal
+cal_2_n_out:
+    ret
+
+test8:
+    mov ecx, 4
+    call cal_2_n
+    int 3
+    ret
+
 test7:
     mov ecx, 4
     mov eax, 1
@@ -84,13 +102,14 @@ test1:
     retf
 
 test_entry:
-    call test1
+    ;call test1
     ;call test2
     ;call test3
     ;call test4
     ;call test5
     ;call test6
-    call test7
+    ;call test7
+    ;call test8
 ;int 3
 test_entry_ret:
     ret
