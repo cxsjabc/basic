@@ -65,7 +65,7 @@ int main(int argc, const char * argv[])
     __asm volatile ("movl %%eax, %0":"=m"(ret)::"memory");
     __asm volatile ("popl %eax");   // must add this line  because cal_2_n use eax
     TIME_END
-#elif defined USE_ASM_INLINED_OPTIMIZED   // 0.36s
+#elif defined USE_ASM_INLINED_OPTIMIZED   // 0.36s, how to optimize faster than c codes?
     printf("USE_ASM_INLINED_OPTIMIZED:n:%d, loop_cnt:%d\n", n, loop_cnt);
     TIME_START(loop_cnt)
     __asm volatile ("pushl %eax");  // must add this line because cal_2_n use eax
@@ -77,7 +77,8 @@ int main(int argc, const char * argv[])
                     "mul_internal:\n"
                     "addl %eax, %eax\n"
                     "decl %ecx\n"
-                    "jnz mul_internal\n"
+                    "cmpl $0, %ecx\n"
+                    "jg mul_internal\n"
                     "cal_2_n_out:");
     __asm volatile ("movl %%eax, %0":"=m"(ret)::"memory");
     __asm volatile ("popl %eax");   // must add this line  because cal_2_n use eax
