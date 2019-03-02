@@ -5,6 +5,7 @@ s:
 
 table   db 1, 2, 3, 4
 msg_catty     db      "Hello, catty!",0xa
+msg_dog       db      "dog", 0
 
 section .text
 
@@ -41,10 +42,55 @@ mul_internal:
 cal_2_n_out:
     ret
 
+test_div:
+    mov ax, 1000
+    mov bl, 20
+    div bl
+    int 3
+    ret
+
+test_lower_to_upper:
+    mov eax, msg_catty
+    mov ecx, 5
+    call lower_to_upper
+    mov esi, 5
+    mov edi, msg_catty
+    call print
+    ret
+
+test_add:
+    mov eax, 10
+    mov ebx, 1
+    call _add
+    int 3
+    ret
+
+test_cube:
+    mov bx, 3
+    call cube
+    int 3
+    ret
+
+test9:
+    mov al, 10
+    mov bl, 10
+    mul bl
+    
+    mov ax, 100
+    mov bx, 100
+    mul bx
+
+    mov ax, 100
+    mov bx, 100
+    mul bx
+    mul bx
+    int 3
+    ret
+
 test8:
     mov ecx, 4
     call cal_2_n
-    int 3
+    ;int 3
     ret
 
 test7:
@@ -110,6 +156,11 @@ test_entry:
     ;call test6
     ;call test7
     ;call test8
+    ;call test9
+    ;call test_cube
+    ;call test_add
+    ;call test_lower_to_upper
+    call test_div
 ;int 3
 test_entry_ret:
     ret

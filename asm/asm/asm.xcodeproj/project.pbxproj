@@ -10,6 +10,7 @@
 		C7337B79222A2A960036705F /* test_cal_2_n.c in Sources */ = {isa = PBXBuildFile; fileRef = C7337B6B222A29D50036705F /* test_cal_2_n.c */; };
 		C7337B8C222A3A450036705F /* cal_2_n.asm in Sources */ = {isa = PBXBuildFile; fileRef = C7337B6A222A29D50036705F /* cal_2_n.asm */; };
 		C7337B8D222A3A480036705F /* test_cal_2_n.c in Sources */ = {isa = PBXBuildFile; fileRef = C7337B6B222A29D50036705F /* test_cal_2_n.c */; };
+		C7337B8F222A57740036705F /* test.S in Sources */ = {isa = PBXBuildFile; fileRef = C7337B5E222121130036705F /* test.S */; };
 		C7EB310517A37BFB0035625E /* asm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7EB310417A37BFB0035625E /* asm.1 */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		C7337B6B222A29D50036705F /* test_cal_2_n.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_cal_2_n.c; sourceTree = "<group>"; };
 		C7337B72222A2A760036705F /* cal_2_n_timing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cal_2_n_timing; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7337B85222A3A390036705F /* cal_2_n_timing_asm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cal_2_n_timing_asm; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7337B91222A77670036705F /* basic.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = basic.inc; sourceTree = "<group>"; };
 		C7EB30FF17A37BFB0035625E /* asm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = asm; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EB310217A37BFB0035625E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C7EB310417A37BFB0035625E /* asm.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = asm.1; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				C7337B56221C45C20036705F /* first.nasm */,
 				C7EB310217A37BFB0035625E /* main.c */,
 				C7EB310417A37BFB0035625E /* asm.1 */,
+				C7337B91222A77670036705F /* basic.inc */,
 			);
 			path = asm;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7337B8F222A57740036705F /* test.S in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

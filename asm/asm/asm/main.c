@@ -19,7 +19,7 @@ int add(int a, int b){
 
 int main(int argc, const char * argv[])
 {
-    int ret;
+    int ret = 0;
     
     // printf("Hello, World!\n");
     
@@ -30,15 +30,7 @@ int main(int argc, const char * argv[])
     __asm volatile ("addl %ebx, %eax");
 #endif
     
-    TIME_START(1000)
-    __asm volatile ("pushl %eax");  // must add this line because cal_2_n use eax
-    __asm volatile ("movl $5, %ecx");
-    __asm volatile ("call cal_2_n");
-    __asm volatile ("movl %%eax, %0":"=m"(ret)::"memory");
-    __asm volatile ("popl %eax");   // must add this line  because cal_2_n use eax
-    TIME_END
-    
-    printf("ret: %d\n", ret);
+    //printf("ret: %d\n", ret);
     
     return 0;
 }

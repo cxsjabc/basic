@@ -5,18 +5,19 @@
 
 ; the real test file
 %include "/Users/xichen/codes/basic/asm/asm/asm/test.inc"
+%include "/Users/xichen/codes/basic/asm/asm/asm/basic.inc"
 
 section     .text
- global _main1                       ;must be declared for linker (ld)
+ global _main                       ;must be declared for linker (ld)
  
 _syscall:           
      int     0x80            ;system call
      ret
 
-_main1:                         ;tell linker entry point
+_main:                         ;tell linker entry point
 
 ; call test file func
-    call test_entry
+     call test_entry
      push    dword len       ;message length
      push    dword msg       ;message to write
      push    dword 1         ;file descriptor (stdout)
