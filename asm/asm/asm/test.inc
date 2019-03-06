@@ -1,3 +1,4 @@
+
 section .data
 s:
     nop
@@ -6,6 +7,13 @@ s:
 table   db 1, 2, 3, 4
 msg_catty     db      "Hello, catty!",0xa
 msg_dog       db      "dog", 0
+msg_dog1      db      'd', 'o', 'g', 0
+msg_dog1_len  db      ($ - msg_dog1)
+
+arr db 1, 2, 3
+    db 4, 5, 6
+
+a   equ  10
 
 section .text
 
@@ -29,6 +37,11 @@ print_no_ret:
     add     esp,12          ;clean stack (3 arguments * 4)
     ; now go home and exit
     jmp test_entry_ret
+
+test_mod:
+    mov eax, 100 % 3
+    int 3
+    ret
 
 ; ecx: n; return value: eax
 global cal_2_n
@@ -160,7 +173,8 @@ test_entry:
     ;call test_cube
     ;call test_add
     ;call test_lower_to_upper
-    call test_div
+    ;call test_div
+    call test_mod
 ;int 3
 test_entry_ret:
     ret
