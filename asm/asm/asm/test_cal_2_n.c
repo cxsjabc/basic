@@ -68,7 +68,7 @@ int main(int argc, const char * argv[])
 #elif defined USE_ASM_INLINED_OPTIMIZED   // 0.36s, how to optimize faster than c codes?
     printf("USE_ASM_INLINED_OPTIMIZED:n:%d, loop_cnt:%d\n", n, loop_cnt);
     TIME_START(loop_cnt)
-    __asm volatile ("pushl %eax");  // must add this line because cal_2_n use eax
+    __asm volatile ("pushq %rax");  // must add this line because cal_2_n use eax
     __asm volatile ("movl $5, %ecx");
     __asm volatile ("_cal_2_n:\n"
                     "movl $1, %eax\n"
@@ -81,7 +81,7 @@ int main(int argc, const char * argv[])
                     "jg mul_internal\n"
                     "cal_2_n_out:");
     __asm volatile ("movl %%eax, %0":"=m"(ret)::"memory");
-    __asm volatile ("popl %eax");   // must add this line  because cal_2_n use eax
+    __asm volatile ("popq %rax");   // must add this line  because cal_2_n use eax
     TIME_END
 #else           // 0.32s
      printf("C source:n:%d, loop_cnt:%d\n", n, loop_cnt);

@@ -48,9 +48,9 @@
 /* Begin PBXFileReference section */
 		C7337B55221C45C20036705F /* first_nasm.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = first_nasm.S; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.asm.i386; };
 		C7337B56221C45C20036705F /* first.nasm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.nasm; path = first.nasm; sourceTree = "<group>"; };
-		C7337B5E222121130036705F /* test.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = test.S; sourceTree = "<group>"; };
+		C7337B5E222121130036705F /* test.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.asm.llvm; fileEncoding = 4; path = test.S; sourceTree = "<group>"; };
 		C7337B60222127600036705F /* test.inc */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = test.inc; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.asm.i386; };
-		C7337B6A222A29D50036705F /* cal_2_n.asm */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; path = cal_2_n.asm; sourceTree = "<group>"; };
+		C7337B6A222A29D50036705F /* cal_2_n.asm */ = {isa = PBXFileReference; explicitFileType = sourcecode.asm.llvm; path = cal_2_n.asm; sourceTree = "<group>"; };
 		C7337B6B222A29D50036705F /* test_cal_2_n.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_cal_2_n.c; sourceTree = "<group>"; };
 		C7337B72222A2A760036705F /* cal_2_n_timing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cal_2_n_timing; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7337B85222A3A390036705F /* cal_2_n_timing_asm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cal_2_n_timing_asm; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,7 +241,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "nasm -g -f macho ${SRCROOT}/asm/first_nasm.nasm\nld -e _main -lSystem -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/first_nasm.o";
+			shellScript = "nasm -g -f macho ${SRCROOT}/asm/first_nasm.nasm\nld -e _main -lSystem -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/first_nasm.o\n";
 		};
 		C7337B6322212EEA0036705F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -254,7 +254,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -rf ${OBJECT_FILE_DIR_normal}/${ARCHS}/*.o\n#rm -rf ${CONFIGURATION_BUILD_DIR}";
+			shellScript = "rm -rf ${OBJECT_FILE_DIR_normal}/${ARCHS}/*.o\n#rm -rf ${CONFIGURATION_BUILD_DIR}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -290,7 +290,7 @@
 		C7337B77222A2A760036705F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ENABLE_MODULES = YES;
@@ -320,7 +320,7 @@
 		C7337B78222A2A760036705F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ENABLE_MODULES = YES;
@@ -351,7 +351,7 @@
 		C7337B8A222A3A390036705F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ENABLE_MODULES = YES;
@@ -387,7 +387,7 @@
 		C7337B8B222A3A390036705F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ENABLE_MODULES = YES;
@@ -482,7 +482,7 @@
 		C7EB310917A37BFB0035625E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -491,7 +491,7 @@
 		C7EB310A17A37BFB0035625E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -507,6 +507,7 @@
 				C7337B78222A2A760036705F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7337B89222A3A390036705F /* Build configuration list for PBXNativeTarget "cal_2_n_timing_asm" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				C7337B8B222A3A390036705F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7EB30FA17A37BFB0035625E /* Build configuration list for PBXProject "asm" */ = {
 			isa = XCConfigurationList;
