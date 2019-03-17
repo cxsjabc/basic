@@ -240,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "mkdir ${BUILD_DIR}/${CONFIGURATION}\n/usr/bin/nasm -g -f macho ${SRCROOT}/asm/test.S -o ${SRCROOT}/asm/asm.o\n/usr/bin/ld -e _main -lSystem -no_pie -macosx_version_min 10.12 -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/asm.o\n";
+			shellScript = "/usr/bin/nasm -g -f macho ${SRCROOT}/asm/test.S -o ${SRCROOT}/asm/asm.o\n/usr/bin/ld -e _main -lSystem -no_pie -macosx_version_min 10.12 -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/asm.o\n";
 		};
 		C7337B6322212EEA0036705F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -480,7 +480,7 @@
 		C7EB310917A37BFB0035625E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -489,7 +489,7 @@
 		C7EB310A17A37BFB0035625E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
