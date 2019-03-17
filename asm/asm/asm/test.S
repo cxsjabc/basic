@@ -1,7 +1,7 @@
 ; Hello World in assembly for mac
-; nasm -f macho hello.asm
-; ld -e _start -o hello hello.o
-;
+; nasm -f macho test.S
+; ld -e _start -o test test.o       // this is for xcode 8.3.3 10.13
+; ld -e _main -o test test.o -lSystem -no_pie -macosx_version_min 10.12  // this is for xcode 10.1 mac 10.13.6
 
 ; the real test file
 %include "/Users/xichen/codes/basic/asm/asm/asm/test.inc"

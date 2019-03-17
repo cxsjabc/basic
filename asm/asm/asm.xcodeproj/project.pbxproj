@@ -10,7 +10,6 @@
 		C7337B79222A2A960036705F /* test_cal_2_n.c in Sources */ = {isa = PBXBuildFile; fileRef = C7337B6B222A29D50036705F /* test_cal_2_n.c */; };
 		C7337B8C222A3A450036705F /* cal_2_n.asm in Sources */ = {isa = PBXBuildFile; fileRef = C7337B6A222A29D50036705F /* cal_2_n.asm */; };
 		C7337B8D222A3A480036705F /* test_cal_2_n.c in Sources */ = {isa = PBXBuildFile; fileRef = C7337B6B222A29D50036705F /* test_cal_2_n.c */; };
-		C7337B8F222A57740036705F /* test.S in Sources */ = {isa = PBXBuildFile; fileRef = C7337B5E222121130036705F /* test.S */; };
 		C7EB310517A37BFB0035625E /* asm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7EB310417A37BFB0035625E /* asm.1 */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,7 @@
 /* Begin PBXFileReference section */
 		C7337B55221C45C20036705F /* first_nasm.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = first_nasm.S; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.asm.i386; };
 		C7337B56221C45C20036705F /* first.nasm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.nasm; path = first.nasm; sourceTree = "<group>"; };
-		C7337B5E222121130036705F /* test.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.asm.llvm; fileEncoding = 4; path = test.S; sourceTree = "<group>"; };
+		C7337B5E222121130036705F /* test.S */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = test.S; sourceTree = "<group>"; };
 		C7337B60222127600036705F /* test.inc */ = {isa = PBXFileReference; explicitFileType = sourcecode.nasm; fileEncoding = 4; path = test.inc; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.asm.i386; };
 		C7337B6A222A29D50036705F /* cal_2_n.asm */ = {isa = PBXFileReference; explicitFileType = sourcecode.asm.llvm; path = cal_2_n.asm; sourceTree = "<group>"; };
 		C7337B6B222A29D50036705F /* test_cal_2_n.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_cal_2_n.c; sourceTree = "<group>"; };
@@ -232,16 +231,16 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C7337B59221C47330036705F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "nasm -g -f macho ${SRCROOT}/asm/first_nasm.nasm\nld -e _main -lSystem -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/first_nasm.o\n";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "mkdir ${BUILD_DIR}/${CONFIGURATION}\n/usr/bin/nasm -g -f macho ${SRCROOT}/asm/test.S -o ${SRCROOT}/asm/asm.o\n/usr/bin/ld -e _main -lSystem -no_pie -macosx_version_min 10.12 -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/asm.o\n";
 		};
 		C7337B6322212EEA0036705F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -280,7 +279,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7337B8F222A57740036705F /* test.S in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -457,7 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -483,7 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -492,7 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

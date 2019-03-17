@@ -40,7 +40,7 @@ print_no_ret:
 
 test_mod:
     mov eax, 100 % 3
-    int 3
+;int 3
     ret
 
 ; ecx: n; return value: eax
