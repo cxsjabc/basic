@@ -38,6 +38,18 @@ print_no_ret:
     ; now go home and exit
     jmp test_entry_ret
 
+test_cf:
+    mov eax, 0x1FF
+    mov ebx, 0x1
+    add eax, ebx        ; CF: 0
+    int 3
+
+    mov al, 0xFF
+    mov bl, 1
+    add al, bl          ; CF: 1
+    int 3
+    ret
+
 test_zf:
     mov eax, 1
     sub eax, 1
@@ -181,7 +193,8 @@ test_entry:
     ;call test_lower_to_upper
     ;call test_div
     ;call test_mod
-    call test_zf
+    ;call test_zf
+    call test_cf
 ;int 3
 test_entry_ret:
     ret
