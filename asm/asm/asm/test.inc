@@ -38,6 +38,12 @@ print_no_ret:
     ; now go home and exit
     jmp test_entry_ret
 
+test_zf:
+    mov eax, 1
+    sub eax, 1
+    int 3       ; eflag bit6 is 1
+    ret
+
 test_mod:
     mov eax, 100 % 3
 ;int 3
@@ -174,7 +180,8 @@ test_entry:
     ;call test_add
     ;call test_lower_to_upper
     ;call test_div
-    call test_mod
+    ;call test_mod
+    call test_zf
 ;int 3
 test_entry_ret:
     ret

@@ -9,7 +9,7 @@
 
 section     .text
  global _main                       ;must be declared for linker (ld)
- 
+
 _syscall:           
      int     0x80            ;system call
      ret
@@ -17,7 +17,7 @@ _syscall:
 _main:                         ;tell linker entry point
 
 ; call test file func
-     call test_entry
+     call    test_entry
      push    dword len       ;message length
      push    dword msg       ;message to write
      push    dword 1         ;file descriptor (stdout)

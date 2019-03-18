@@ -240,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "/usr/bin/nasm -g -f macho ${SRCROOT}/asm/test.S -o ${SRCROOT}/asm/asm.o\n/usr/bin/ld -e _main -lSystem -no_pie -macosx_version_min 10.12 -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/asm.o\n";
+			shellScript = "nasm -g -f macho ${SRCROOT}/asm/test.S -o ${SRCROOT}/asm/asm.o\nld -e _main -lSystem -no_pie -macosx_version_min 10.12 -o ${BUILD_DIR}/${CONFIGURATION}/asm ${SRCROOT}/asm/asm.o\n";
 		};
 		C7337B6322212EEA0036705F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
