@@ -4,10 +4,20 @@
 
 #include "common_local.h"
 
+void test_chinese_char()
+{
+	unsigned char s[] = "猫";
+	int i;
+
+	for(i = 0; i < strlen(s); ++i)
+		printf("%#x ", s[i]);
+}
+
 int main(int argc, char *argv[])
 {
 	int ret;
 
+	test_chinese_char();
 	ret = printf("123");
 	PD(ret);
 	ret = printf("猫");
