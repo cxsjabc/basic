@@ -36,9 +36,13 @@ int get_input_key()
 
 void process_up_down_keys()
 {
+#define BUF_SIZE	10	
+	char buf[BUF_SIZE];
+	int i = 0;
 
 	while(1) {
 		int key;
+
 		tcgetattr(0, &cooked);
 		memcpy(&raw, &cooked, sizeof(struct termios));
 		raw.c_lflag &= ~(ICANON | ECHO);
@@ -49,10 +53,30 @@ void process_up_down_keys()
 		key = get_input_key();
 
 		tcsetattr(0, TCSANOW, &cooked);
-		printf("key:%x\n", key);
+		//printf("key:%x\n", key);
 
-		if(key != 1 && key != 2)
-			break;
+		if(key != 1 && key != 2) {
+			if(i == BUF_SIZE - 1) {
+				buf[i] = '\0';
+				printf("buf:|%s|\n", buf);
+				break;
+			}
+			buf[i++] = key;	
+			printf("%c", key);
+			if(key == '\n') {
+				buf[i] = '\0';
+				printf("buf:|%s|\n", buf);
+				break;
+			}
+		}
+		else if(key == 0x7F) {
+			// delete key
+			if(i > 0) {
+				buf[--i] = '\0';
+			}
+		}
+		else
+			printf("the up/down history!\n");
 	}
 }
 
