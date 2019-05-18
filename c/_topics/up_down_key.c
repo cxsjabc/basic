@@ -45,9 +45,10 @@ void process_up_down_keys()
 
 		tcgetattr(0, &cooked);
 		memcpy(&raw, &cooked, sizeof(struct termios));
-		raw.c_lflag &= ~(ICANON | ECHO);
-		raw.c_cc[VEOL] = 1;
-		raw.c_cc[VEOF] = 2;
+		//raw.c_lflag &= ~(ICANON);
+		//raw.c_cc[VEOL] = 1;
+		//raw.c_cc[VEOF] = 2;
+		cfmakeraw(&raw);
 		tcsetattr(0, TCSANOW, &raw);
 
 		key = get_input_key();
@@ -62,7 +63,7 @@ void process_up_down_keys()
 				break;
 			}
 			buf[i++] = key;	
-			printf("%c", key);
+			//printf("%c", key);
 			if(key == '\n') {
 				buf[i] = '\0';
 				printf("buf:|%s|\n", buf);
@@ -75,8 +76,10 @@ void process_up_down_keys()
 				buf[--i] = '\0';
 			}
 		}
-		else
-			printf("the up/down history!\n");
+		else if(key == 1)
+			printf("the up key!\n");
+		else if(key == 2)
+			printf("the down key!\n");
 	}
 }
 
