@@ -4,8 +4,13 @@
 
 #include "common_local.h"
 
+#undef MAX
+#define MAX(a, b)	((a) > (b) ? (a) : (b))
+
 int main(int argc, char *argv[])
 {
-	printf("hello, my cat\n");
+	TS(1000)
+		printf("%d", MAX(1, 2));
+	TE	
 	return 0;
 }

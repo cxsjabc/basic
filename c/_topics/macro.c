@@ -4,8 +4,13 @@
 
 #include "common_local.h"
 
+void test() {
+#define N 10
+printf("%d\n", N);
+}
+
 int main(int argc, char *argv[])
 {
-	printf("hello, my cat\n");
-	return 0;
+	printf("%d\n", N); 
+    return 0;
 }

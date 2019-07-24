@@ -6,6 +6,6 @@
 
 int main(int argc, char *argv[])
 {
-	printf("hello, my cat\n");
-	return 0;
+#include "macro.txt"
+    return 0;
 }
