@@ -8,8 +8,9 @@
 
 #include <stdio.h>
 
+int a = 7;
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+    printf("hello, my cat: %p\n", &a);
     return 0;
 }
