@@ -4,10 +4,17 @@
 
 #include "common_local.h"
 
+int sum(int a, int b)
+{
+	int t = a + b;
+}
+
 int main(int argc, char *argv[])
 {
-	float f = 1.6;
+	int a;
 
-	printf("%f\n", f);
+	__asm volatile("movl $4, %eax\n");
+	a = sum(1, 2);
+	printf("%d\n", a);
 	return 0;
 }
