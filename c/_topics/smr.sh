@@ -8,7 +8,7 @@ fi
 
 DEST=${1%.*}
 
-gcc -o $1.simple.elf $1
+gcc -Os -g -o $1.simple.elf $1
 
 if [ $? -eq 0 ]
 then

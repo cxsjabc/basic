@@ -11,7 +11,9 @@ REL_PATH=../../../
 source common.sh
 #echo "COMMON_C:${COMMON_C}"
 
+CC=gcc
+
 DEST=$1
 shift
 
-gcc $@ -Wall -g -o $DEST.elf $DEST ${COMMON_C} && ./$DEST.elf
+$CC $@ -Wall -g -Os -o $DEST.elf $DEST ${COMMON_C} && ./$DEST.elf
