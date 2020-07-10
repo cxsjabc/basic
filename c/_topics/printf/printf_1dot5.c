@@ -2,10 +2,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-#include "common_local.h"
-
 int main(int argc, char *argv[])
 {
-	printf("%d\n", 1.5);
+	float f = 5.0f;
+
+	printf("%d\n", f);
 	return 0;
 }
