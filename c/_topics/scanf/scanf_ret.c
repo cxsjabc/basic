@@ -8,5 +8,10 @@
 
 int main(int argc, char *argv[])
 {
+	int n, ret;
+
+	ret = scanf("%d", &n);
+	printf("n:%d, ret:%d\n", n, ret);
+
 	return 0;
 }
