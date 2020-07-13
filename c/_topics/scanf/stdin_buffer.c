@@ -13,8 +13,8 @@ void check_stdin_buffer()
 	unsigned char *p;
 	int size;
 
-	p = stdin->_p;
-	size = stdin->_bf._size;
+	p = fp->_p;
+	size = p ? strlen((const char *)p) : 0;
 
 	write(1, "stdin buffer:", strlen("stdin buffer:"));
 	write(1, p, size);
