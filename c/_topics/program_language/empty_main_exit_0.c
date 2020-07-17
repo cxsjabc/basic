@@ -1,8 +1,10 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
+/*
+   Xi Chen(511272827@qq.com)
+   cxsjabcabc
+*/
 
-#include "common_local.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
